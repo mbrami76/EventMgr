@@ -1,6 +1,6 @@
 ## TODO
 
-* Add custom event objects to events
+<del>* Add custom event objects to events</del>
 * Check if EventMgr works also with object prototypes
 * Add passing multiple events to `.addListener()`
 * Increase security
