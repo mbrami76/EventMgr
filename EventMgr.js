@@ -59,11 +59,12 @@ function SimpleEventMananger(obj){
 
   //dispatch: fires an event and executes all associated callbacks
   obj.dispatch = (function(o){
-    return function (EventName){
+    return function (EventName, EventData){
       //String EventName: Event to be dispatched to listeners
+      //Object EventData: Custom data that can be passed to the callback function
       for (var i = 0; i<o._listeners.length; i++){
         if (o._listeners[i].en == EventName){
-          o._listeners[i].cb();
+          o._listeners[i].cb(EventData);
         }
       }
     };  
