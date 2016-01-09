@@ -12,13 +12,13 @@ var myObject = function(){
   this.say = function (what){
     console.log (what);
     //Fires the event "said"
-    this.dispatch("said");
+    this.dispatch("said", what);
   };
 };
 
 //Adds listener to "said" event fired from myObject
-listenerRef = myObject.addListener("said", function(){
-  console.log ("Fired event 'said'");
+listenerRef = myObject.addListener("said", function(evtData){
+  console.log ("Event: said, EventData:"+ evtData);
 });
 
 myObject.say ("Hello");
